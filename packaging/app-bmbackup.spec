@@ -3,7 +3,7 @@ Name: app-bmbackup
 Epoch: 1
 Version: 1.0.0
 Release: 1%{dist}
-Summary: Baremetal Backup And Restore
+Summary: Baremetal Backup and Restore
 License: GPLv3
 Group: ClearOS/Apps
 Packager: Mercy Corps <mkhan@mercycorps.org>
@@ -17,7 +17,7 @@ Requires: app-base
 The Bare Metal Backup/Restore app saves and restores both users' home directories and the configuration settings to and from a USB disk that is initialized by the process below.
 
 %package core
-Summary: Baremetal Backup And Restore - Core
+Summary: Baremetal Backup and Restore - Core
 License: LGPLv3
 Group: ClearOS/Libraries
 Requires: app-base-core
@@ -34,7 +34,7 @@ This package provides the core API and libraries.
 %install
 mkdir -p -m 755 %{buildroot}/usr/clearos/apps/bmbackup
 cp -r * %{buildroot}/usr/clearos/apps/bmbackup/
-rm -f %{buildroot}/usr/clearos/apps/bmbackup/README.md
+
 install -d -m 755 %{buildroot}/etc/clearos/bmbackup.d
 install -D -m 0644 packaging/backup.conf %{buildroot}/etc/clearos/bmbackup.d/backup.conf
 install -D -m 0644 packaging/email.conf %{buildroot}/etc/clearos/bmbackup.d/email.conf
@@ -75,7 +75,6 @@ exit 0
 
 %files core
 %defattr(-,root,root)
-%doc README.md
 %exclude /usr/clearos/apps/bmbackup/packaging
 %dir /usr/clearos/apps/bmbackup
 %dir %attr(755,webconfig,webconfig) /etc/clearos/bmbackup.d
