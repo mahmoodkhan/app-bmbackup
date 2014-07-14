@@ -280,8 +280,6 @@ class Bmbackup extends Engine
      */
     function update_email_notification_settings($notification_level, $email_address)
     {
-    print_r($notification_level);
-    print_r($email_address);
         $file = new File(self::EMAIL_CONFIG_FILE, TRUE);
 
         if ($file->exists() && $notification_level == self::NO_NOTIFICATIONS) {
